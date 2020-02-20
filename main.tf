@@ -6,10 +6,10 @@ provider "aws" {
 
 module "aws_instance" {
     source  = "app.terraform.io/service-now-test/module-example/aws"
-    version = "1.0.0"
+    version = "1.0.1"
     instance_type = "t2.medium"
 
-    instance_count = 1
+    instance_count = var.cloud == "aws" ? 1 : 0
 }
 
 module "azure_instance" {
