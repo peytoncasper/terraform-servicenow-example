@@ -8,4 +8,14 @@ module "aws_instance" {
     source  = "app.terraform.io/service-now-test/module-example/aws"
     version = "1.0.0"
     instance_type = "t2.medium"
+
+    num = var.provider == "aws" ? 1 : 0
+}
+
+module "azure_instance" {
+    source  = "app.terraform.io/service-now-test/module-example/azure"
+    version = "1.0.0"
+    instance_type = "Standard_DS1_v2"
+
+    num = var.provider == "azure" ? 1 : 0
 }
