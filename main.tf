@@ -14,7 +14,7 @@ module "aws_instance" {
 
 module "azure_instance" {
     source  = "app.terraform.io/service-now-test/module-example/azure"
-    version = "1.0.0"
+    version = "1.0.1"
     instance_type = "Standard_DS1_v2"
 
     instance_count = var.cloud == "azure" ? 1 : 0
