@@ -9,7 +9,7 @@ module "aws_instance" {
     version = "1.0.0"
     instance_type = "t2.medium"
 
-    num = var.cloud == "aws" ? 1 : 0
+    instance_count = var.cloud == "aws" ? 1 : 0
 }
 
 module "azure_instance" {
@@ -17,5 +17,5 @@ module "azure_instance" {
     version = "1.0.0"
     instance_type = "Standard_DS1_v2"
 
-    num = var.cloud == "azure" ? 1 : 0
+    instance_count = var.cloud == "azure" ? 1 : 0
 }
