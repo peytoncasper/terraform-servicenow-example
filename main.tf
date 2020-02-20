@@ -17,5 +17,5 @@ module "azure_instance" {
     version = "1.0.0"
     instance_type = "Standard_DS1_v2"
 
-    num = var.provider == "azure" ? 1 : 0
+    num = var.cloud == "azure" ? 1 : 0
 }

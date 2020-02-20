@@ -1,3 +1,3 @@
-variable "provider" {
+variable "cloud" {
     type = string
 }
