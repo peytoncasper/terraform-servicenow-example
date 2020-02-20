@@ -1,0 +1,3 @@
+variable "provider" {
+    type = string
+}
