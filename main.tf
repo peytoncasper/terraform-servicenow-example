@@ -9,7 +9,7 @@ module "aws_instance" {
     version = "1.0.0"
     instance_type = "t2.medium"
 
-    num = var.provider == "aws" ? 1 : 0
+    num = var.cloud == "aws" ? 1 : 0
 }
 
 module "azure_instance" {
