@@ -2,20 +2,37 @@ provider "aws" {
     region = "us-west-2"
 }
 
-# provider "azurerm" {}
+resource "aws_security_group" "default" {
+  name_prefix = "test_instance"
 
-module "aws_instance" {
-    source  = "app.terraform.io/service-now-test/module-example/aws"
-    version = "1.0.2"
-    instance_type = var.aws_instance_type
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
-    instance_count = var.cloud == "aws" ? 1 : 0
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Created-by = "Terraform"
+    Identity   = "test_instance"
+  }
 }
 
-# module "azure_instance" {
-#     source  = "app.terraform.io/service-now-test/module-example/azure"
-#     version = "1.0.2"
-#     instance_type = "Standard_DS1_v2"
+resource "aws_instance" "web" {
+  ami           = "ami-c62eaabe"
+  instance_type = var.instance_type
 
-#     instance_count = var.cloud == "azure" ? 1 : 0
-# }
+  vpc_security_group_ids = [aws_security_group.default.id]
+
+  tags = {
+    Identity = "test_instance"
+  }
+
+}
