@@ -1,3 +1,3 @@
-variable "aws_instance_type" {
+variable "instance_type" {
     type = string
 }
