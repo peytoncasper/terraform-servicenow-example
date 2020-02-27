@@ -1,7 +1,7 @@
 import "tfrun"
 import "decimal"
 
-monthly_cost = decimal.new(tfrun.cost_estimate.monthly_cost)
+monthly_cost = decimal.new(tfrun.cost_estimate.proposed_monthly_cost)
 
 main = rule {
     monthly_cost.less_than(20)
