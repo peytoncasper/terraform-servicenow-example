@@ -28,6 +28,8 @@ resource "aws_security_group" "default" {
 resource "aws_instance" "web" {
   ami           = "ami-c62eaabe"
   instance_type = var.instance_type
+  
+  associate_public_ip_address = true
 
   vpc_security_group_ids = [aws_security_group.default.id]
 
