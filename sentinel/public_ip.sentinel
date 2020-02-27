@@ -17,7 +17,7 @@ get_instances = func(type) {
 
 instance_has_public_ip = rule {
 	all get_instances("aws_instance") as r {
-        r.applied.instance_has_public_ip
+        r.applied.associate_public_ip_address is not true
 	}
 }
 
