@@ -1,0 +1,12 @@
+{
+    "mock": {
+        "tfrun": {
+            "cost_estimate": {
+                "proposed_monthly_cost": 100.0
+            }
+        }
+    },
+    "test": {
+        "main": false
+    }
+}
