@@ -8,14 +8,15 @@ https://www.terraform.io/docs/cloud/integrations/service-now/index.html
     <img align="center" src="doc/Part11.gif" alt="example"/>
 </p>
 
-HashiCorp created an extension for ServiceNow that allows users to interact with the Terraform API via ServiceNow. The goal of this example is to showcase how we can build on those concepts to integrate automated Sentinel policies that will inject manual approvals into ServiceNow when necessary. The GIF above showcases the end result in which we utilize a customized version of the Terraform ServiceNow Integration to accomplish the following items.
+HashiCorp recently created a Terraform ServiceNow integration, which provides essential building blocks for integrating Terraform and ServiceNow. The GIF above depicts the end result and functionally, the following actions.
 
-1. Create a Workspace
-2. Stream Status Updates back a ServiceNow Ticket
-3. Have a Sentinel Cost Policy fail and require manual approval
-4. Generate a ServiceNow Approval Request for Spa Ghetti
-5. Manually approve the request in ServiceNow 
-6. Trigger a Policy Override with the Terraform API with a custom ServiceNow Workflow
+Creating a Workspace with ServiceNow
+Adding AWS Credentials and an instance_type in Terraform Cloud
+Manually triggering a Terraform Run
+Sentinel forces a policy override due to the Terraform plan having a monthly cost of more than $20/month
+A manual approval request is created for Spa Ghetti in ServiceNow
+We manually approve the request in ServiceNow
+A REST request is made to the Terraform Policy Override API
 
 # Installation
 
