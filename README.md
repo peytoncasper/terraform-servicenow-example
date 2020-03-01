@@ -1,6 +1,4 @@
-https://docs.servicenow.com/bundle/madrid-application-development/page/build/applications/task/t_AccessStudio.html
-
-https://www.terraform.io/docs/cloud/integrations/service-now/index.html
+![alt text](doc/header.png)
 
 # What is this?
 
@@ -10,13 +8,13 @@ https://www.terraform.io/docs/cloud/integrations/service-now/index.html
 
 HashiCorp recently created a Terraform ServiceNow integration, which provides essential building blocks for integrating Terraform and ServiceNow. The GIF above depicts the end result and functionally, the following actions.
 
-Creating a Workspace with ServiceNow
-Adding AWS Credentials and an instance_type in Terraform Cloud
-Manually triggering a Terraform Run
-Sentinel forces a policy override due to the Terraform plan having a monthly cost of more than $20/month
-A manual approval request is created for Spa Ghetti in ServiceNow
-We manually approve the request in ServiceNow
-A REST request is made to the Terraform Policy Override API
+1. Creating a Workspace with ServiceNow
+2. Adding AWS Credentials and an instance_type in Terraform Cloud
+3. Manually triggering a Terraform Run
+4. Sentinel forces a policy override due to the Terraform plan having a monthly cost of more than $20/month
+6. A manual approval request is created for Spa Ghetti in ServiceNow
+7. We manually approve the request in ServiceNow
+8. A REST request is made to the Terraform Policy Override API
 
 # Installation
 
@@ -200,3 +198,6 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 14. Approve it
 15. Sit back and watch Terraform process the Override Request!
 
+# Resources
+[1] https://www.terraform.io/docs/cloud/integrations/service-now/index.html
+ 
