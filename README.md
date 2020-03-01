@@ -7,7 +7,7 @@ https://www.terraform.io/docs/cloud/integrations/service-now/index.html
 ## Setting Up Terraform Cloud
 
 <p align="center">
-    <img align="center" src="https://imgur.com/a/hLpMm9w" alt="example"/>
+    <img align="center" src="https://imgur.com/a/hLpMm9w.gif" alt="example"/>
 </p>
 
 
@@ -76,7 +76,7 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 ## Add Policy Override REST Message
 
 <p align="center">
-    <img align="center" src="assets/Part5.gif" alt="example"/>
+    <img align="center" src="https://imgur.com/a/g8Y32zH" alt="example"/>
 </p>
 
 1. Navigate to the Studio
