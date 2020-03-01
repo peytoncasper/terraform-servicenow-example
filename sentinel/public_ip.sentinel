@@ -22,5 +22,5 @@ instance_has_public_ip = rule {
 }
 
 main = rule {
-	(instance_has_public_ip)
+	(instance_has_public_ip) else true
 }
