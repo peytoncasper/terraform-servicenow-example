@@ -7,3 +7,5 @@ doc/Part3.gif filter=lfs diff=lfs merge=lfs -text
 doc/Part4.gif filter=lfs diff=lfs merge=lfs -text
 doc/Part5.gif filter=lfs diff=lfs merge=lfs -text
 doc/Part6.gif filter=lfs diff=lfs merge=lfs -text
+doc/Part10.gif filter=lfs diff=lfs merge=lfs -text
+doc/Part11.gif filter=lfs diff=lfs merge=lfs -text

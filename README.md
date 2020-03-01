@@ -2,6 +2,21 @@ https://docs.servicenow.com/bundle/madrid-application-development/page/build/app
 
 https://www.terraform.io/docs/cloud/integrations/service-now/index.html
 
+# What is this?
+
+<p align="center">
+    <img align="center" src="doc/Part11.gif" alt="example"/>
+</p>
+
+HashiCorp created an extension for ServiceNow that allows users to interact with the Terraform API via ServiceNow. The goal of this example is to showcase how we can build on those concepts to integrate automated Sentinel policies that will inject manual approvals into ServiceNow when necessary. The GIF above showcases the end result in which we utilize a customized version of the Terraform ServiceNow Integration to accomplish the following items.
+
+1. Create a Workspace
+2. Stream Status Updates back a ServiceNow Ticket
+3. Have a Sentinel Cost Policy fail and require manual approval
+4. Generate a ServiceNow Approval Request for Spa Ghetti
+5. Manually approve the request in ServiceNow 
+6. Trigger a Policy Override with the Terraform API with a custom ServiceNow Workflow
+
 # Installation
 
 ## Setting Up Terraform Cloud
@@ -84,14 +99,18 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 4. Search for and select `REST Message`
 5. Name it `TF Policy Checks`
 6. Enter `${hostname}/api/v2/policy-checks` as the Endpoint
-7. Delete the `Default GET` HTTP Method
-8. Create a new HTTP Method
-9. Name it `Override Policy`
-10. Enter `${hostname}/api/v2/policy-checks/${policy_check_id}/actions/override` as the Endpoint
-11. Select `POST` as the HTTP Method
-12. Click Submit
-13. Add a Variable Substitution called `api_team_token` and select Submit
-14. Add a Variable Substitution called `policy_check_id` and select Submit
+7. Select the `HTTP Request Tab`
+8. Add an `Authorization` Header with the value of `Bearer ${api_team_token}`
+9. Add a `Content-Type` Header with the value of `application/vnd.api+json`
+10. Click Submit
+11. Delete the `Default GET` HTTP Method
+12. Create a new HTTP Method
+13. Name it `Override Policy`
+14. Enter `${hostname}/api/v2/policy-checks/${policy_check_id}/actions/override` as the Endpoint
+15. Select `POST` as the HTTP Method
+16. Click Submit
+17. Add a Variable Substitution called `api_team_token` and select Submit
+18. Add a Variable Substitution called `policy_check_id` and select Submit
 
 ## Add TF_Policy Script
 
@@ -121,8 +140,11 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 6. Paste the contents of `service_now/wf_poll_run_state.js` into the Script section
 7. Select the Left Hand Hamburger Menu
 8. Click Publish
+9. Select `Worker Poll Run State` under Workflow Schedule
+10. Select `Periodically` from the Run dropdown
+11. Click Update
 
-# Try it Out!
+# Configuration
 
 ## Add a Terraform API Config
 
@@ -147,23 +169,33 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 4. Enter `peytoncasper/terraform-servicenow-example` into the Identifier
 5. Enter the GitHub OAuth token from earlier
 
-## Add Policy Override REST
+## Add the Terraform Service Catalog
 
-Sentinel Policies
-The 
-Walk Through Terraform ServiceNow Project
-Setting Up Terraform Cloud
-ServiceNow Developer Account
-Installing Terraform ServiceNow Integration
-Add Spa Ghetti User
-Status Check 
-Talk about Variable Sets
-Talk About Catalog Items
-Talk about Workflows
-Talk about REST Messages
-Talk about Script Includes
+<p align="center">
+    <img align="center" src="doc/Part10.gif" alt="example"/>
+</p>
 
-Add tf_policy Script
-Add TF Policy REST Message
-Add Custom Workflow
-Conclusion
+1. Utilize the left hand search bar to search for `Service Catalog`
+2. Select `Catalogs` under `Service Catalog`
+2. Click the `+` in the upper right 
+3. Select `Terraform Catalog`
+4. Click Add Here
+
+# Action!
+
+1. Utilize the left hand search bar to search for `Service Catalog`
+2. Select `Catalogs` under `Service Catalog`
+3. Select the `Terraform Catalog`
+4. Select `Create Workspace`
+5. Select `Order Now`
+6. Navigate to Terraform Cloud
+7. Select the Workspace
+8. Add a `AWS_ACCESS_KEY_ID` Environment Variable
+9. Add a `AWS_SECRET KEY` Environment Variable
+10. Add an `instance_type` Terraform Variable with a value of `m5.large`
+11. Queue a Terraform Apply
+12. Wait for the `Soft Policy Check`
+13. Refresh the ServiceNow Request and Navigate to the Approval that was added
+14. Approve it
+15. Sit back and watch Terraform process the Override Request!
+
