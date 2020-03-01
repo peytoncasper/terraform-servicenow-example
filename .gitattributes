@@ -1,1 +1,9 @@
 doc/Part1.gif filter=lfs diff=lfs merge=lfs -text
+doc/Part7.gif filter=lfs diff=lfs merge=lfs -text
+doc/Part8.gif filter=lfs diff=lfs merge=lfs -text
+doc/Part9.gif filter=lfs diff=lfs merge=lfs -text
+doc/Part2.gif filter=lfs diff=lfs merge=lfs -text
+doc/Part3.gif filter=lfs diff=lfs merge=lfs -text
+doc/Part4.gif filter=lfs diff=lfs merge=lfs -text
+doc/Part5.gif filter=lfs diff=lfs merge=lfs -text
+doc/Part6.gif filter=lfs diff=lfs merge=lfs -text

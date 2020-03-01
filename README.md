@@ -6,13 +6,9 @@ https://www.terraform.io/docs/cloud/integrations/service-now/index.html
 
 ## Setting Up Terraform Cloud
 
-
-[Imgur](https://i.imgur.com/3Vgdh6D.gifv)
-
 <p align="center">
-    <img align="center" src="https://imgur.com/a/hLpMm9w.gif" alt="example"/>
+    <img align="center" src="doc/Part1.gif" alt="example"/>
 </p>
-
 
 For simplicity, we are going to use Terraform Cloud with an Enterprise Trial. However, if you're using a Terraform Enterprise installation you would follow the same steps.
 
