@@ -6,6 +6,9 @@ https://www.terraform.io/docs/cloud/integrations/service-now/index.html
 
 ## Setting Up Terraform Cloud
 
+
+![Imgur Image](https://imgur.com/a/hLpMm9w.gif)
+
 <p align="center">
     <img align="center" src="https://imgur.com/a/hLpMm9w.gif" alt="example"/>
 </p>
