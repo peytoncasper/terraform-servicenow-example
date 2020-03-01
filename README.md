@@ -22,7 +22,7 @@ For simplicity, we are going to use Terraform Cloud with an Enterprise Trial. Ho
 ## Setting up GitHub VCS Connection to Terraform Cloud
 
 <p align="center">
-    <img align="center" src="assets/Part2.gif" alt="example"/>
+    <img align="center" src="https://imgur.com/a/z46PeI3" alt="example"/>
 </p>
 
 1. Navigate to the VCS Providers page and Add a GitHub OAuth Provider.
@@ -43,7 +43,7 @@ For simplicity, we are going to use Terraform Cloud with an Enterprise Trial. Ho
 ## Installing the Terraform ServiceNow Application
 
 <p align="center">
-    <img align="center" src="assets/Part3.gif" alt="example"/>
+    <img align="center" src="https://imgur.com/a/1ezGW2e" alt="example"/>
 </p>
 
 You'll need to request the Terraform Service Now Integration repo from HashiCorp which you can then include in a personal or company VCS repository.
@@ -62,7 +62,7 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 ## Add Spa Ghetti
 
 <p align="center">
-    <img align="center" src="assets/Part4.gif" alt="example"/>
+    <img align="center" src="https://imgur.com/a/NmlaxNA" alt="example"/>
 </p>
 
 1. Use the Left Hand Search Bar to filter for Users
