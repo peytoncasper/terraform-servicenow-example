@@ -21,7 +21,7 @@ For simplicity, we are going to use Terraform Cloud with an Enterprise Trial. Ho
 ## Setting up GitHub VCS Connection to Terraform Cloud
 
 <p align="center">
-    <img align="center" src="https://imgur.com/a/z46PeI3" alt="example"/>
+    <img align="center" src="doc/Part2.gif" alt="example"/>
 </p>
 
 1. Navigate to the VCS Providers page and Add a GitHub OAuth Provider.
@@ -42,7 +42,7 @@ For simplicity, we are going to use Terraform Cloud with an Enterprise Trial. Ho
 ## Installing the Terraform ServiceNow Application
 
 <p align="center">
-    <img align="center" src="https://imgur.com/a/1ezGW2e" alt="example"/>
+    <img align="center" src="doc/Part3.gif" alt="example"/>
 </p>
 
 You'll need to request the Terraform Service Now Integration repo from HashiCorp which you can then include in a personal or company VCS repository.
@@ -61,7 +61,7 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 ## Add Spa Ghetti
 
 <p align="center">
-    <img align="center" src="https://imgur.com/a/NmlaxNA" alt="example"/>
+    <img align="center" src="doc/Part4.gif" alt="example"/>
 </p>
 
 1. Use the Left Hand Search Bar to filter for Users
@@ -75,7 +75,7 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 ## Add Policy Override REST Message
 
 <p align="center">
-    <img align="center" src="https://imgur.com/a/g8Y32zH" alt="example"/>
+    <img align="center" src="doc/Part5.gif" alt="example"/>
 </p>
 
 1. Navigate to the Studio
@@ -96,7 +96,7 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 ## Add TF_Policy Script
 
 <p align="center">
-    <img align="center" src="assets/Part6.gif" alt="example"/>
+    <img align="center" src="doc/Part6.gif" alt="example"/>
 </p>
 
 1. Navigate to the Studio
@@ -110,7 +110,7 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 ## Update Poll Run State
 
 <p align="center">
-    <img align="center" src="assets/Part7.gif" alt="example"/>
+    <img align="center" src="doc/Part7.gif" alt="example"/>
 </p>
 
 1. Navigate to the Studio
@@ -127,7 +127,7 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 ## Add a Terraform API Config
 
 <p align="center">
-    <img align="center" src="assets/Part8.gif" alt="example"/>
+    <img align="center" src="doc/Part8.gif" alt="example"/>
 </p>
 
 1. Utilize the left hand search bar to search for Terraform
@@ -138,7 +138,7 @@ You'll need to request the Terraform Service Now Integration repo from HashiCorp
 ## Add a Terraform VCS Repository
 
 <p align="center">
-    <img align="center" src="assets/Part9.gif" alt="example"/>
+    <img align="center" src="doc/Part9.gif" alt="example"/>
 </p>
 
 1. Utilize the left hand search bar to search for Terraform
