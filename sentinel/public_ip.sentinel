@@ -3,7 +3,7 @@ import "tfplan"
 get_instances = func(type) {
 	instances = []
 
-	# Get all aws_instance Resources in Module
+	# Get all aws_instance Resources
 	aws_instances = tfplan.resources["aws_instance"] else {}
 	for aws_instances as _, instance {
 		# Iterate each aws_instance and append to list
