@@ -16,6 +16,26 @@ HashiCorp recently created a Terraform ServiceNow integration, which provides es
 7. We manually approve the request in ServiceNow
 8. A REST request is made to the Terraform Policy Override API
 
+[Check out the Blog Post on Medium!](https://medium.com/p/830fad580bfa/edit)
+
+
+# Building Blocks
+
+![alt text](doc/blocks.png)
+
+The Terraform ServiceNow Integration builds on top of a few generic constructs from ServiceNow's API. 
+
+**Catalog:** Catalogs are a top-level collection which provides an entry point for users to interact with the integration.
+
+**Variables and Variable Sets:** Variables and by extension, Variable Sets are embedded within Forms and provide fields for users to enter data. This could be anything from collecting AWS IAM credentials to Workspace names.
+
+**Workflows:** Workflows allow users to embed an ECMA5 script that can access variables from the invoking object. The two types of workflows utilized in this integration are scheduled on an interval and triggered manually. This allows users to interact with the Terraform API in the form of polling and implicitly.
+Polling allows us to continuously grab that latest status of a workspace and synchronize that with ServiceNow. Similarly, manual triggers allow users to create workspaces and, in our case, trigger policy overrides.
+
+**Scripts:** Scripts are pieces of code that need to be shared across workflows. In our case, the integration is utilizing Scripts to wrap the Terraform API interactions in functions that are called from running Workflows.
+
+**REST Messages:** REST Messages are the last major block and define the available REST requests. This includes setting Headers, Parameters, Method, and more.
+
 # Installation
 
 ## Setting Up Terraform Cloud
