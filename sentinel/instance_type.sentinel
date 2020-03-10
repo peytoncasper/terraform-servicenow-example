@@ -1,32 +1,12 @@
-import "tfplan"
-
-get_instances = func(type) {
-	instances = []
-
-
-	# Get all aws_instance Resources
-	plan_instances = tfplan.resources["aws_instance"] else {}
-	for plan_instances as _, instance {
-		# Iterate each aws_instance and append to list
-		for instance as _, body {
-			append(instances, body)
-		}
-	}
-
-
-	return instances
-}
+import "tfplan/v2" as tfplan
 
 instance_types = [
 	"m5.large",
 ]
 
-instance_type_allowed = rule {
-	all get_instances("aws_instance") as r {
-		r.applied.instance_type in instance_types
-	}
+violations = filter tfplan.planned_values.resources as _, r {
+		r.type is "aws_instance" and
+		r.values["instance_type"] not in instance_types
 }
 
-main = rule {
-	(instance_type_allowed) else true
-}
+main = rule { length(violations) == 0 }

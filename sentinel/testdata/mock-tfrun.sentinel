@@ -1,0 +1,46 @@
+import "strings"
+import "types"
+
+created_at = "2020-03-10T03:44:58.417Z"
+message = "Queued manually in Terraform Cloud"
+speculative = false
+is_destroy = false
+
+variables = {
+	"AWS_ACCESS_KEY_ID": {
+		"category":  "env",
+		"sensitive": false,
+	},
+	"AWS_SECRET_KEY": {
+		"category":  "env",
+		"sensitive": false,
+	},
+	"instance_type": {
+		"category":  "terraform",
+		"sensitive": false,
+	},
+}
+
+organization = {
+	"name": "peyton-dev",
+}
+
+workspace = {
+	"auto_apply":  false,
+	"created_at":  "2020-03-10T03:36:03.098Z",
+	"description": null,
+	"name":        "terraform-servicenow-example",
+	"vcs_repo": {
+		"branch":             "",
+		"display_identifier": "peytoncasper/terraform-servicenow-example",
+		"identifier":         "peytoncasper/terraform-servicenow-example",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}
+
+cost_estimate = {
+	"delta_monthly_cost":    "69.12",
+	"prior_monthly_cost":    "0.0",
+	"proposed_monthly_cost": "69.12",
+}

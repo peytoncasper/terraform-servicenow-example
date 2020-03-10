@@ -1,0 +1,108 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data":    {},
+		"modules": {},
+		"outputs": {},
+		"providers": {
+			"aws": {
+				"alias": {
+					"": {
+						"config": {
+							"region": "us-west-2",
+						},
+						"references": {
+							"region": [],
+						},
+						"version": "",
+					},
+				},
+				"config": {
+					"region": "us-west-2",
+				},
+				"references": {
+					"region": [],
+				},
+				"version": "",
+			},
+		},
+		"resources": {
+			"aws_instance": {
+				"web": {
+					"config": {
+						"ami": "ami-c62eaabe",
+						"associate_public_ip_address": false,
+						"tags": {
+							"Identity": "test_instance",
+						},
+					},
+					"provisioners": null,
+					"references": {
+						"ami": [],
+						"associate_public_ip_address": [],
+						"instance_type": [
+							"var.instance_type",
+						],
+						"tags": [],
+						"vpc_security_group_ids": [
+							"aws_security_group.default",
+						],
+					},
+				},
+			},
+			"aws_security_group": {
+				"default": {
+					"config": {
+						"name_prefix": "test_instance",
+						"tags": {
+							"Created-by": "Terraform",
+							"Identity":   "test_instance",
+						},
+					},
+					"provisioners": null,
+					"references": {
+						"name_prefix": [],
+						"tags":        [],
+					},
+				},
+			},
+		},
+		"variables": {
+			"instance_type": {
+				"default":     null,
+				"description": "",
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+modules = _modules.root.modules
+providers = _modules.root.providers
+resources = _modules.root.resources
+variables = _modules.root.variables
+outputs = _modules.root.outputs

@@ -1,0 +1,101 @@
+import "strings"
+
+providers = {
+	"aws": {
+		"alias": "",
+		"config": {
+			"region": {
+				"constant_value": "us-west-2",
+			},
+		},
+		"module_address":      "",
+		"name":                "aws",
+		"provider_config_key": "aws",
+		"version_constraint":  "",
+	},
+}
+
+resources = {
+	"aws_instance.web": {
+		"address": "aws_instance.web",
+		"config": {
+			"ami": {
+				"constant_value": "ami-c62eaabe",
+			},
+			"associate_public_ip_address": {
+				"constant_value": false,
+			},
+			"instance_type": {
+				"references": [
+					"var.instance_type",
+				],
+			},
+			"tags": {
+				"constant_value": {
+					"Identity": "test_instance",
+				},
+			},
+			"vpc_security_group_ids": {
+				"references": [
+					"aws_security_group.default",
+				],
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "web",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_instance",
+	},
+	"aws_security_group.default": {
+		"address": "aws_security_group.default",
+		"config": {
+			"name_prefix": {
+				"constant_value": "test_instance",
+			},
+			"tags": {
+				"constant_value": {
+					"Created-by": "Terraform",
+					"Identity":   "test_instance",
+				},
+			},
+		},
+		"count":               {},
+		"depends_on":          [],
+		"for_each":            {},
+		"mode":                "managed",
+		"module_address":      "",
+		"name":                "default",
+		"provider_config_key": "aws",
+		"provisioners":        [],
+		"type":                "aws_security_group",
+	},
+}
+
+provisioners = {}
+
+variables = {
+	"instance_type": {
+		"default":        null,
+		"description":    "",
+		"module_address": "",
+		"name":           "instance_type",
+	},
+}
+
+outputs = {}
+
+module_calls = {}
+
+strip_index = func(addr) {
+	s = strings.split(addr, ".")
+	for s as i, v {
+		s[i] = strings.split(v, "[")[0]
+	}
+
+	return strings.join(s, ".")
+}
